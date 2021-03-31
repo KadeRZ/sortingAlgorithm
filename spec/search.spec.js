@@ -11,7 +11,7 @@ describe('Search', function() {
         let result = binary(5, [10, 5, 6, 3, 4, 2, 8, 7, 1, 9]);
         expect(result).toEqual(-1);
     })
-    it('should prove that a binary search cannot loop through the unsorted array and find the matching index', function() {
+    it('should pass when binary time is less than linear time and should fail when linear time was less than binary time', function() {
         let binaryCount = 0;
         let linearCount = 0;
         for(i = 0; i < 10; i++) {
@@ -31,7 +31,7 @@ describe('Search', function() {
                 linearCount++;
             }
         }
-        expect(binaryCount > linearCount).toEqual(true);
+        expect(binaryCount < linearCount).toEqual(true);
     })
     // it('should search thorugh the array and find the matching value', function() {
     //     let result = search.binaryLoop(data, 4);
